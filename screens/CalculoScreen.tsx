@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Button, } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {  TextInput } from 'react-native-paper'
+import Busqueda from '../components/Busqueda'
 
 export default function CalculoScreen() {
 
@@ -24,7 +25,7 @@ export default function CalculoScreen() {
                 multiplosLista.push(i)
             }
         }
-        console.log(multiplosLista)
+        //console.log(multiplosLista)
         setlista(multiplosLista)
     }
 
@@ -39,6 +40,8 @@ export default function CalculoScreen() {
       />
       <Text>{lista.join(', ')}</Text>
       <Button title='Calcular' onPress={ ()=> multiplos(+numero)}/>
+
+      <Busqueda data={lista}/>
     </View>
   )
 }
